@@ -1,12 +1,14 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import Footer from "@/components/Footer";
+import BottomHeader from "@/components/header/BottomHeader";
+import Header from "@/components/header/Header";
 
 export default function Home() {
   return (
     <main>
-      <h1>Hello</h1>
+      <Header />
+      <BottomHeader />
+      <div className="py-10 bg-gray-300 "></div>
+      <Footer />
     </main>
   );
 }
