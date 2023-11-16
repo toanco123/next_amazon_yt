@@ -36,7 +36,7 @@ export const nextSlice = createSlice({
       if (existingProduct) {
         existingProduct.quantity += action.payload.quantity;
       } else {
-        state.productData.push(action.payload);
+        state.favoriteData.push(action.payload);
       }
     },
     increaseQuantity: (state, action) => {
