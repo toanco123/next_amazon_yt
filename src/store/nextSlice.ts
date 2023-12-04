@@ -40,13 +40,13 @@ export const nextSlice = createSlice({
       }
     },
     increaseQuantity: (state, action) => {
-      const existingProduct = state.favoriteData.find(
+      const existingProduct = state.productData.find(
         (item: StoreProduct) => item._id === action.payload._id
       );
       existingProduct && existingProduct.quantity++;
     },
     decreaseQuantity: (state, action) => {
-      const existingProduct = state.favoriteData.find(
+      const existingProduct = state.productData.find(
         (item: StoreProduct) => item._id === action.payload._id
       );
       if (existingProduct?.quantity === 1) {
@@ -57,6 +57,11 @@ export const nextSlice = createSlice({
     },
     deleteProduct: (state, action) => {
       state.productData = state.productData.filter(
+        (item) => item._id !== action.payload
+      );
+    },
+    deleteFavorite: (state, action) => {
+      state.favoriteData = state.favoriteData.filter(
         (item) => item._id !== action.payload
       );
     },

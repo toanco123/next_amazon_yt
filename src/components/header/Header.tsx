@@ -13,6 +13,8 @@ const Header = () => {
   const { productData, favoriteData } = useSelector(
     (state: StateProps) => state.next
   );
+  console.log("productData", productData);
+  console.log("favoriteData", favoriteData);
 
   return (
     <div className="w-full h-20 bg-amazon_blue text-lightText sticky top-0 z-50">
@@ -55,15 +57,18 @@ const Header = () => {
           </p>
         </div>
         {/* favorite */}
-        <div className="text-xs text-gray-100 flex flex-col justify-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative">
+        <Link
+          href={"/favorite"}
+          className="text-xs text-gray-100 flex flex-col justify-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
+        >
           <p>Marked</p>
-          <p className="text-white font-bold">& Favotite</p>
+          <p className="text-white font-bold">& Favorite</p>
           {favoriteData.length > 0 && (
             <span className="absolute right-2 top-2 w-4 h-4 border-[1px] border-gray-400 flex items-center justify-center text-xs text-amazon_yellow">
               {favoriteData.length}
             </span>
           )}
-        </div>
+        </Link>
         {/* cart */}
         <Link
           className="flex items-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
