@@ -55,7 +55,7 @@ const Products = ({ productData }: any) => {
               </Link>
               <div className="w-12 h-24 absolute bottom-10 right-0 border-[1px] border-gray-400 bg-white rounded-md flex flex-col translate-x-20 group-hover:translate-x-0 transition-transform duration-300">
                 <span
-                  onClick={() => {
+                  onClick={() =>
                     dispatch(
                       addToCart({
                         _id: _id,
@@ -69,14 +69,14 @@ const Products = ({ productData }: any) => {
                         title: title,
                         quantity: 1,
                       })
-                    );
-                  }}
+                    )
+                  }
                   className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300"
                 >
                   <HiShoppingCart />
                 </span>
                 <span
-                  onClick={() => {
+                  onClick={() =>
                     dispatch(
                       addToFavorite({
                         _id: _id,
@@ -90,8 +90,8 @@ const Products = ({ productData }: any) => {
                         title: title,
                         quantity: 1,
                       })
-                    );
-                  }}
+                    )
+                  }
                   className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300"
                 >
                   <FaHeart />
@@ -99,7 +99,7 @@ const Products = ({ productData }: any) => {
               </div>
               {isNew && (
                 <p className="absolute top-0 right-0 text-amazon_blue font-medium text-xs tracking-wide animate-bounce">
-                  !save <FormattedPrice amount={(oldPrice = price)} />
+                  !save <FormattedPrice amount={oldPrice - price} />
                 </p>
               )}
             </div>
@@ -119,7 +119,7 @@ const Products = ({ productData }: any) => {
                 {description.substring(0, 120)}
               </p>
               <button
-                onClick={() => {
+                onClick={() =>
                   dispatch(
                     addToCart({
                       _id: _id,
@@ -133,8 +133,8 @@ const Products = ({ productData }: any) => {
                       title: title,
                       quantity: 1,
                     })
-                  );
-                }}
+                  )
+                }
                 className="h-10 font-medium bg-amazon_blue text-white rounded-md hover:bg-amazon_yellow hover:text-black duration-300 mt-2"
               >
                 add to cart
