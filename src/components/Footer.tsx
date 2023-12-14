@@ -13,7 +13,7 @@ const Footer = () => {
           href=""
           target=""
         >
-          toanco.tn@gmail.com
+          toanco.tn@gmail.com - 0588138547
         </a>
       </p>
     </div>
