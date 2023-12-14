@@ -14,7 +14,9 @@ const SuccessPage = () => {
         href={"/"}
         onClick={() => dispatch(resetCart())}
       >
-        <p>Continue Shopping</p>
+        <button className="w-52 h-10 bg-amazon_blue text-white rounded-lg text-sm font-semibold hover:bg-amazon_yellow hover:text-black">
+          Continue Shopping
+        </button>
       </Link>
     </div>
   );
