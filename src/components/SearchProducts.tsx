@@ -40,6 +40,7 @@ const SearchProducts = ({ item }: Item) => {
       <div className="flex-1 text-right px-4">
         <p className="text-base font-semibold animate-bounce text-amazon_blue">
           Save <FormattedPrice amount={item.oldPrice - item.price} />
+          Save <FormattedPrice amount={item.oldPrice - item.price} />
         </p>
       </div>
     </div>
