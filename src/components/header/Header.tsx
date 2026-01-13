@@ -47,6 +47,8 @@ const Header = () => {
     setSearchQuery(e.target.value);
   };
 
+  console.log('filteredProducts', filteredProducts);
+
   useEffect(() => {
     const filtered = allData.filter((item: StoreProduct) =>
       item.title.toLocaleLowerCase().includes(searchQuery.toLowerCase()),
