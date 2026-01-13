@@ -1,13 +1,11 @@
-import { resetCart } from "@/store/nextSlice";
-import React from "react";
-import { useDispatch } from "react-redux";
+import { resetCart } from '@/store/nextSlice';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
 const ResetCart = () => {
   const dispatch = useDispatch();
   const handlResetCart = () => {
-    const confirmReset = window.confirm(
-      "Are you sure to reset your items from the carts?"
-    );
+    const confirmReset = window.confirm('Are you sure to reset your items from the carts?');
     if (confirmReset) {
       dispatch(resetCart());
     }

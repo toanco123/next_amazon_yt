@@ -1,8 +1,8 @@
-import { LuMenu } from "react-icons/lu";
-import { useDispatch, useSelector } from "react-redux";
-import { StateProps } from "../../../type";
-import { signOut } from "next-auth/react";
-import { removeUser } from "@/store/nextSlice";
+import { LuMenu } from 'react-icons/lu';
+import { useDispatch, useSelector } from 'react-redux';
+import { StateProps } from '../../../type';
+import { signOut } from 'next-auth/react';
+import { removeUser } from '@/store/nextSlice';
 
 const BottomHeader = () => {
   const dispatch = useDispatch();

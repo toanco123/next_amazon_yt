@@ -1,12 +1,12 @@
-import React from "react";
-import { ProductProps } from "../../type";
-import Image from "next/image";
-import { HiShoppingCart } from "react-icons/hi";
-import { FaHeart } from "react-icons/fa";
-import FormattedPrice from "./FormattedPrice";
-import { useDispatch } from "react-redux";
-import { addToCart, addToFavorite } from "@/store/nextSlice";
-import Link from "next/link";
+import React from 'react';
+import { ProductProps } from '../../type';
+import Image from 'next/image';
+import { HiShoppingCart } from 'react-icons/hi';
+import { FaHeart } from 'react-icons/fa';
+import FormattedPrice from './FormattedPrice';
+import { useDispatch } from 'react-redux';
+import { addToCart, addToFavorite } from '@/store/nextSlice';
+import Link from 'next/link';
 
 const Products = ({ productData }: any) => {
   const dispatch = useDispatch();
@@ -68,7 +68,7 @@ const Products = ({ productData }: any) => {
                         price: price,
                         title: title,
                         quantity: 1,
-                      })
+                      }),
                     )
                   }
                   className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300"
@@ -89,7 +89,7 @@ const Products = ({ productData }: any) => {
                         price: price,
                         title: title,
                         quantity: 1,
-                      })
+                      }),
                     )
                   }
                   className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300"
@@ -115,9 +115,7 @@ const Products = ({ productData }: any) => {
                   <FormattedPrice amount={price} />
                 </span>
               </p>
-              <p className="text-xs text-gray-600 text-justify">
-                {description.substring(0, 120)}
-              </p>
+              <p className="text-xs text-gray-600 text-justify">{description.substring(0, 120)}</p>
               <button
                 onClick={() =>
                   dispatch(
@@ -132,7 +130,7 @@ const Products = ({ productData }: any) => {
                       price: price,
                       title: title,
                       quantity: 1,
-                    })
+                    }),
                   )
                 }
                 className="h-10 font-medium bg-amazon_blue text-white rounded-md hover:bg-amazon_yellow hover:text-black duration-300 mt-2"
@@ -141,7 +139,7 @@ const Products = ({ productData }: any) => {
               </button>
             </div>
           </div>
-        )
+        ),
       )}
     </div>
   );

@@ -1,9 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { StateProps, StoreProduct } from "../../type";
-import FavoriteProduct from "@/components/FavoriteProduct";
-import ResetFavoriteItems from "@/components/ResetFavoriteItems";
-import Link from "next/link";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { StateProps, StoreProduct } from '../../type';
+import FavoriteProduct from '@/components/FavoriteProduct';
+import ResetFavoriteItems from '@/components/ResetFavoriteItems';
+import Link from 'next/link';
 
 const FavoritePage = () => {
   const { favoriteData } = useSelector((state: StateProps) => state.next);
@@ -13,9 +13,7 @@ const FavoritePage = () => {
       {favoriteData.length > 0 ? (
         <div className="bg-white p-4 rounded-lg">
           <div className="flex items-center justify-between border-b-[1px] border-b-gray-400 pb-1">
-            <p className="text-2xl font-semibold text-amazon_blue">
-              Favorte Items
-            </p>
+            <p className="text-2xl font-semibold text-amazon_blue">Favorte Items</p>
             <p className="text-lg font-semibold text-amazon_blue">Action</p>
           </div>
           <div>

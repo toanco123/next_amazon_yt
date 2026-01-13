@@ -1,7 +1,7 @@
-import { resetCart } from "@/store/nextSlice";
-import Link from "next/link";
-import React from "react";
-import { useDispatch } from "react-redux";
+import { resetCart } from '@/store/nextSlice';
+import Link from 'next/link';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 const SuccessPage = () => {
   const dispatch = useDispatch();
   return (
@@ -11,7 +11,7 @@ const SuccessPage = () => {
       </h1>
       <Link
         className="text-lg text-gray-500 hover:underline underline-offset-4 decoration-[1px] hover:text-blue-600 duration-300"
-        href={"/"}
+        href={'/'}
         onClick={() => dispatch(resetCart())}
       >
         <button className="w-52 h-10 bg-amazon_blue text-white rounded-lg text-sm font-semibold hover:bg-amazon_yellow hover:text-black">

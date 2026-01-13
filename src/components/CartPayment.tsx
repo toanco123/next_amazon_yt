@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { SiMediamarkt } from "react-icons/si";
-import FormattedPrice from "./FormattedPrice";
-import { useSelector } from "react-redux";
-import { StateProps, StoreProduct } from "../../type";
-import { loadStripe } from "@stripe/stripe-js";
-import { useSession } from "next-auth/react";
+import React, { useEffect, useState } from 'react';
+import { SiMediamarkt } from 'react-icons/si';
+import FormattedPrice from './FormattedPrice';
+import { useSelector } from 'react-redux';
+import { StateProps, StoreProduct } from '../../type';
+import { loadStripe } from '@stripe/stripe-js';
+import { useSession } from 'next-auth/react';
 
 const CartPayment = () => {
-  const { productData, userInfo } = useSelector(
-    (state: StateProps) => state.next
-  );
+  const { productData, userInfo } = useSelector((state: StateProps) => state.next);
   const [totalAmount, setTotalAmount] = useState(0);
   useEffect(() => {
     let ant = 0;
@@ -21,16 +19,14 @@ const CartPayment = () => {
   }, [productData]);
 
   //Stripe payment
-  const stripePromise = loadStripe(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
-  );
+  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
   const { data: session } = useSession();
   const handleCheckout = async () => {
     const stripe = await stripePromise;
-    const response = await fetch("/api/checkout", {
-      method: "POST",
+    const response = await fetch('/api/checkout', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ items: productData, email: session?.user?.email }),
     });
@@ -54,12 +50,11 @@ const CartPayment = () => {
           <SiMediamarkt />
         </span>
         <p className="text-sm">
-          Your order qualifies for FREE Shopping by Choosing this option at
-          checkout. See details...
+          Your order qualifies for FREE Shopping by Choosing this option at checkout. See details...
         </p>
       </div>
       <p className="flex items-center justify-between px-2 font-semibold">
-        Total:{" "}
+        Total:{' '}
         <span className="font-bold text-xl">
           <FormattedPrice amount={totalAmount} />
         </span>

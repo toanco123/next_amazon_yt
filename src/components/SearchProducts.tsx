@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import FormattedPrice from "./FormattedPrice";
+import React from 'react';
+import FormattedPrice from './FormattedPrice';
 
 interface Props {
   brand: string;
@@ -28,7 +28,7 @@ const SearchProducts = ({ item }: Item) => {
         <p className="text-lg font-medium">{item.title}</p>
         <p className="text-xs">{item.description.substring(0, 100)}</p>
         <p className="text-sm flex items-center gap-1">
-          price:{" "}
+          price:{' '}
           <span className="font-semibold">
             <FormattedPrice amount={item.price} />
           </span>

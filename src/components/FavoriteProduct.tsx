@@ -1,8 +1,8 @@
-import Image from "next/image";
-import React from "react";
-import FormattedPrice from "./FormattedPrice";
-import { useDispatch } from "react-redux";
-import { addToCart, deleteFavorite } from "@/store/nextSlice";
+import Image from 'next/image';
+import React from 'react';
+import FormattedPrice from './FormattedPrice';
+import { useDispatch } from 'react-redux';
+import { addToCart, deleteFavorite } from '@/store/nextSlice';
 interface Item {
   _id: number;
   brand: string;
@@ -29,7 +29,7 @@ const FavoriteProduct = ({ item }: cartProductProps) => {
           <p className="text-lg font-semibold text-amazon_blue">{item.title}</p>
           <p className="text-sm text-gray-500">{item.description}</p>
           <p className="text-sm text-gray-600">
-            Unit price:{" "}
+            Unit price:{' '}
             <span className="font-semibold text-amazon_blue">
               <FormattedPrice amount={item.price} />
             </span>
@@ -48,7 +48,7 @@ const FavoriteProduct = ({ item }: cartProductProps) => {
                   price: item.price,
                   title: item.title,
                   quantity: 1,
-                })
+                }),
               ) && dispatch(deleteFavorite(item._id));
             }}
             className="w-44 h-10 font-medium bg-amazon_blue text-white rounded-md hover:bg-amazon_yellow duration-300 hover:text-black mt-2"

@@ -1,12 +1,12 @@
-import FormattedPrice from "@/components/FormattedPrice";
-import { addToCart, addToFavorite } from "@/store/nextSlice";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import { FaHeart } from "react-icons/fa";
-import { HiShoppingCart } from "react-icons/hi";
-import { useDispatch } from "react-redux";
-import { BeatLoader } from "react-spinners";
+import FormattedPrice from '@/components/FormattedPrice';
+import { addToCart, addToFavorite } from '@/store/nextSlice';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import { FaHeart } from 'react-icons/fa';
+import { HiShoppingCart } from 'react-icons/hi';
+import { useDispatch } from 'react-redux';
+import { BeatLoader } from 'react-spinners';
 
 const DynamicPage = () => {
   const [product, setProduct] = useState<any>({});
@@ -29,12 +29,7 @@ const DynamicPage = () => {
       ) : (
         <div className="w-full grid md:grid-cols-3 gap-3 bg-gray-100 rounded-lg">
           <div className="flex items-center justify-center bg-gray-200 rounded-lg relative group overflow-hidden">
-            <Image
-              src={product.image}
-              alt="product image"
-              width={500}
-              height={500}
-            />
+            <Image src={product.image} alt="product image" width={500} height={500} />
             <div className="w-12 h-24 absolute bottom-10 right-0 border-[1px] border-gray-400 bg-white rounded-md flex flex-col translate-x-20 group-hover:-translate-x-2 transition-transform duration-300">
               <span
                 onClick={() =>
@@ -50,7 +45,7 @@ const DynamicPage = () => {
                       price: product.price,
                       title: product.title,
                       quantity: 1,
-                    })
+                    }),
                   )
                 }
                 className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300"
@@ -71,7 +66,7 @@ const DynamicPage = () => {
                       price: product.price,
                       title: product.title,
                       quantity: 1,
-                    })
+                    }),
                   )
                 }
                 className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300"
@@ -84,9 +79,7 @@ const DynamicPage = () => {
             <p className="text-xs md:text-sm text-amazon_blue font-semibold -mb-3">
               {product.category}_{product.brand}
             </p>
-            <h1 className="text-xl md:text-3xl tracking-wide font-semibold">
-              {product.title}
-            </h1>
+            <h1 className="text-xl md:text-3xl tracking-wide font-semibold">{product.title}</h1>
             <p className="text-sm text-gray-600">{product.description}</p>
             <div>
               <p className="text-base text-gray-600 flex items-center gap-1">
@@ -99,7 +92,7 @@ const DynamicPage = () => {
                 </span>
               </p>
               <p className="text-sm text-gray-500 flex items-center gap-1">
-                Your saved:{" "}
+                Your saved:{' '}
                 <span>
                   <FormattedPrice amount={product.oldPrice - product.price} />
                 </span>
@@ -118,7 +111,7 @@ const DynamicPage = () => {
                       price: product.price,
                       title: product.title,
                       quantity: 1,
-                    })
+                    }),
                   )
                 }
                 className="w-full md:w-96 h-12 bg-amazon_blue text-gray-200 hover:bg-amazon_yellow hover:text-amazon_blue duration-300 rounded-lg mt-5 text-base font-semibold"

@@ -1,14 +1,10 @@
-import Image from "next/image";
-import React from "react";
-import FormattedPrice from "./FormattedPrice";
-import { LuMinus, LuPlus } from "react-icons/lu";
-import { IoMdClose } from "react-icons/io";
-import { useDispatch } from "react-redux";
-import {
-  decreaseQuantity,
-  deleteProduct,
-  increaseQuantity,
-} from "@/store/nextSlice";
+import Image from 'next/image';
+import React from 'react';
+import FormattedPrice from './FormattedPrice';
+import { LuMinus, LuPlus } from 'react-icons/lu';
+import { IoMdClose } from 'react-icons/io';
+import { useDispatch } from 'react-redux';
+import { decreaseQuantity, deleteProduct, increaseQuantity } from '@/store/nextSlice';
 
 interface Item {
   brand: string;
@@ -42,7 +38,7 @@ const CartProduct = ({ item }: cartProductsProps) => {
           <p className="text-lg font-semibold text-amazon_blue">{item.title}</p>
           <p className="text-sm text-gray-600">{item.description}</p>
           <p className="text-sm text-gray-600">
-            Unit Price{" "}
+            Unit Price{' '}
             <span className="font-semibold text-amazon_blue">
               <FormattedPrice amount={item.price} />
             </span>
@@ -63,7 +59,7 @@ const CartProduct = ({ item }: cartProductsProps) => {
                       price: item.price,
                       title: item.title,
                       quantity: 1,
-                    })
+                    }),
                   )
                 }
                 className="w-6 h-6 flex items-center justify-center rounded-full text-base bg-transparent hover:bg-gray-300 cursor-pointer decoration-purple-300"
@@ -85,7 +81,7 @@ const CartProduct = ({ item }: cartProductsProps) => {
                       price: item.price,
                       title: item.title,
                       quantity: 1,
-                    })
+                    }),
                   )
                 }
                 className="w-6 h-6 flex items-center justify-center rounded-full text-base bg-transparent hover:bg-gray-300 cursor-pointer decoration-purple-300"

@@ -1,9 +1,9 @@
-import Banner from "@/components/Banner";
-import Products from "@/components/Products";
-import { ProductProps } from "../../type";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { setAllProducts } from "@/store/nextSlice";
+import Banner from '@/components/Banner';
+import Products from '@/components/Products';
+import { ProductProps } from '../../type';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { setAllProducts } from '@/store/nextSlice';
 
 interface Props {
   productData: ProductProps;
@@ -29,7 +29,7 @@ export default function Home({ productData }: Props) {
 // SSR
 
 export const getServerSideProps = async () => {
-  const res = await fetch("https://fakestoreapiserver.reactbd.com/tech");
+  const res = await fetch('https://fakestoreapiserver.reactbd.com/tech');
   const productData = await res.json();
   return { props: { productData } };
 };
